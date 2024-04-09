@@ -27,7 +27,7 @@ app.use('/api/v1/user', userRouter);
 app.use('/api/v1/offer', offerRouter);
 
 // Configura el puerto
-const port = 3006 ;
+const port = 8080 ;
 app.listen(port, () => {
     console.log(`Corriendo en el puerto ${port}`);
 });
