@@ -9,7 +9,7 @@ const signale_1 = require("signale");
 // import * as admin from "firebase-admin";
 const express_fileupload_1 = __importDefault(require("express-fileupload")); // Importa express-fileupload
 const dotenv_1 = __importDefault(require("dotenv"));
-const userRouter_1 = require("../src/store/User/infraestructure/userRouter");
+const userRouter_1 = require("./store/User/infraestructure/userRouter");
 const offerRouter_1 = require("./store/User/infraestructure/offerRouter");
 dotenv_1.default.config();
 // Inicializa la aplicación Express

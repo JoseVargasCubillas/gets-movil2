@@ -4,7 +4,7 @@ import { Signale } from 'signale';
 // import * as admin from "firebase-admin";
 import fileUpload from 'express-fileupload'; // Importa express-fileupload
 import dotenv from "dotenv";
-import {    userRouter } from "../src/store/User/infraestructure/userRouter";
+import {    userRouter } from "./store/User/infraestructure/userRouter";
 import { offerRouter } from "./store/User/infraestructure/offerRouter";
 
 dotenv.config();

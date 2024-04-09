@@ -20,9 +20,6 @@ export const registerUserUseCase = new RegisterUserUseCase(mysqlUserRepository);
 export const registerUserController = new RegisterUserController(registerUserUseCase);
 
 
-
-
-
 const offerRepository = new MysqlOfferRepository();
 const registerOfferUseCase = new RegisterOfferUseCase(offerRepository);
 const registerOfferController = new RegisterOfferController(registerOfferUseCase);
