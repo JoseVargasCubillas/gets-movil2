@@ -44,11 +44,11 @@ const promise_1 = __importDefault(require("mysql2/promise"));
 const signale_1 = require("signale");
 const signale = new signale_1.Signale();
 const config = {
-    host: 'localhost',
+    host: 'database-1.cfyii6aowla3.us-east-1.rds.amazonaws.com',
     port: 3306,
-    user: 'root',
-    database: 'movil',
-    password: '',
+    user: 'admin',
+    database: 'vaquito',
+    password: '12345678',
     waitForConnections: true,
     connectionLimit: 10,
 };

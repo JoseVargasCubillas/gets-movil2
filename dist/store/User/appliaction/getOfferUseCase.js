@@ -9,21 +9,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetUsersUseCase = void 0;
-class GetUsersUseCase {
-    constructor(userRepository) {
-        this.userRepository = userRepository;
+exports.GetOfferUseCase = void 0;
+class GetOfferUseCase {
+    constructor(offerRepository) {
+        this.offerRepository = offerRepository;
     }
-    run() {
+    getOffer(id) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const getAll = yield this.userRepository.getUsers();
-                return getAll;
+                return yield this.offerRepository.getOffer(id);
             }
             catch (error) {
+                console.error("Error getting Offer:", error);
                 return null;
             }
         });
     }
 }
-exports.GetUsersUseCase = GetUsersUseCase;
+exports.GetOfferUseCase = GetOfferUseCase;

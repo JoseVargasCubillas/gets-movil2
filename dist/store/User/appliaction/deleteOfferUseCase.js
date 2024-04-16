@@ -9,21 +9,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetUsersUseCase = void 0;
-class GetUsersUseCase {
-    constructor(userRepository) {
-        this.userRepository = userRepository;
+exports.DeleteOfferUseCase = void 0;
+class DeleteOfferUseCase {
+    constructor(offerRepository) {
+        this.offerRepository = offerRepository;
     }
-    run() {
+    run(id) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const getAll = yield this.userRepository.getUsers();
-                return getAll;
+                const offer = yield this.offerRepository.getOffer(id);
+                if (!offer) {
+                    throw new Error("Offer not found");
+                }
+                yield this.offerRepository.deleteOffer(id);
+                return true;
             }
             catch (error) {
-                return null;
+                console.error("Error deleting offer:", error);
+                throw new Error("Error deleting offer");
             }
         });
     }
 }
-exports.GetUsersUseCase = GetUsersUseCase;
+exports.DeleteOfferUseCase = DeleteOfferUseCase;

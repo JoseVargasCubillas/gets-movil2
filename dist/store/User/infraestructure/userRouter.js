@@ -5,6 +5,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.userRouter = void 0;
 const express_1 = __importDefault(require("express"));
+const getUsersController_1 = require("./controllers/getUsersController");
+const mysqlUserRepository_1 = require("./mysqlUserRepository");
+const registerUserController_1 = require("./controllers/registerUserController");
+const getUsersUseCase_1 = require("../appliaction/getUsersUseCase");
+const registerUserUseCase_1 = require("../appliaction/registerUserUseCase");
 const dependencies_1 = require("./dependencies");
 exports.userRouter = express_1.default.Router();
+const userRepository = new mysqlUserRepository_1.MysqlUserRepository();
+const getUsersUseCase = new getUsersUseCase_1.GetUsersUseCase(userRepository);
+const getUsersController = new getUsersController_1.GetUsersController(getUsersUseCase);
+const registerUserUseCase = new registerUserUseCase_1.RegisterUserUseCase(userRepository);
+const registerUserController = new registerUserController_1.RegisterUserController(registerUserUseCase);
+exports.userRouter.get("/all-users", getUsersController.getUsers.bind(getUsersController));
 exports.userRouter.get("/:id", dependencies_1.getUserController.getByPublic.bind(dependencies_1.getUserController));
+exports.userRouter.post("/create-user", registerUserController.register.bind(registerUserController));
