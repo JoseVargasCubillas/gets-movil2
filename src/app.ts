@@ -4,7 +4,7 @@ import { Signale } from 'signale';
 // import * as admin from "firebase-admin";
 import fileUpload from 'express-fileupload'; // Importa express-fileupload
 import dotenv from "dotenv";
-import {    userRouter } from "./store/User/infraestructure/userRouter";
+import {    userRouter } from "../src/store/User/infraestructure/userRouter";
 import { offerRouter } from "./store/User/infraestructure/offerRouter";
 
 dotenv.config();
@@ -27,7 +27,7 @@ app.use('/api/v1/user', userRouter);
 app.use('/api/v1/offer', offerRouter);
 
 // Configura el puerto
-const port = 8080 ;
+const port = 3006 ;
 app.listen(port, () => {
     console.log(`Corriendo en el puerto ${port}`);
 });

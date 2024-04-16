@@ -33,18 +33,15 @@
 
 import mysql from "mysql2/promise";
 import { Signale } from "signale";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const signale = new Signale();
 
 const config = {
-    host: 'database-1.cfyii6aowla3.us-east-1.rds.amazonaws.com',
+    host: 'localhost',
     port: 3306,
-    user: 'admin',
-    database: 'vaquito',
-    password: '12345678',
+    user: 'root',
+    database: 'movil',
+    password: '',
     waitForConnections: true,
     connectionLimit: 10,
 };

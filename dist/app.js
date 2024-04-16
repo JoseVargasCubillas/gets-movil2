@@ -9,8 +9,7 @@ const signale_1 = require("signale");
 // import * as admin from "firebase-admin";
 const express_fileupload_1 = __importDefault(require("express-fileupload")); // Importa express-fileupload
 const dotenv_1 = __importDefault(require("dotenv"));
-const userRouter_1 = require("./store/User/infraestructure/userRouter");
-const offerRouter_1 = require("./store/User/infraestructure/offerRouter");
+const userRouter_1 = require("../src/store/User/infraestructure/userRouter");
 dotenv_1.default.config();
 // Inicializa la aplicación Express
 const app = (0, express_1.default)();
@@ -23,7 +22,6 @@ app.use(express_1.default.urlencoded({ extended: true }));
 app.use((0, express_fileupload_1.default)()); // Agrega esta línea para configurar express-fileupload
 // Configura las rutas
 app.use('/api/v1/user', userRouter_1.userRouter);
-app.use('/api/v1/offer', offerRouter_1.offerRouter);
 // Configura el puerto
 const port = 3006;
 app.listen(port, () => {

@@ -1,5 +1,5 @@
 import { Request,Response } from "express";
-import { GetUserUseCase } from "../../appliaction/getUsersUseCase";
+import { GetUserUseCase } from "../../appliaction/getUserUseCase";
 
 export class GetUserController {
     getUserUseCase: GetUserUseCase;
